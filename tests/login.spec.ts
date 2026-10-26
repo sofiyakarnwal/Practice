@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import { validLoginData } from '../test-data/testData';
+import { invalidData, validLoginData } from '../test-data/testData';
 import { LoginPage } from '../Pages/loginPage';
 
 test('Verify Navigation', async({page})=>
@@ -25,4 +25,7 @@ test('Verify successful login with valid credentials',async({page})=>
 
 
 }
-)
+);
+
+
+
