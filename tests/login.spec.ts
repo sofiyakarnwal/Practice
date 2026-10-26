@@ -29,3 +29,13 @@ test('Verify successful login with valid credentials',async({page})=>
 
 
 
+test('Verify successful logout with invalid credentials',async({page})=>
+{
+     const loginpage=new LoginPage(page);
+     await loginpage.navigator();
+     await expect(page.getByRole('heading',{name:'Test Login page for Automation Testing Practice'}));
+
+     await loginpage.login(invalidData.username,invalidData.password);
+     await expect(page.getByRole('alert')).toContainText('Your password is invalid!');
+}
+);
